@@ -1,0 +1,41 @@
+{  
+   "name":"Filter Feed",
+   "version":"0.0.1",
+   "manifest_version":2,
+   "description":"An extension that blacken out all your facebook timeline posts containing some specific keywords",
+   "icons":{  
+      "16":"icons/16x16.png",
+      "48":"icons/48x48.png",
+      "128":"icons/128x128.png"
+   },
+   "browser_action":{  
+      "default_icon":{  
+         "19":"icons/19x19.png",
+         "38":"icons/38x38.png"
+      },
+      "default_title":"Timeline Filter",
+      "default_popup":"browseraction/popup.html"
+   },
+   "background":{  
+      "scripts":[  
+         "background.js"
+      ]
+   },
+   "permissions":[  
+      "storage"
+   ],
+   "web_accessible_resources":[  
+      "icons/grey.png"
+   ],
+   "content_scripts":[  
+      {  
+         "matches":[  
+            "*://*.facebook.com/*"
+         ],
+         "js":[  
+            "jquery-3.1.1.min.js",
+            "content.js"
+         ]
+      }
+   ]
+}
